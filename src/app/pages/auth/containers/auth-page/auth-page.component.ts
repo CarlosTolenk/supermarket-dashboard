@@ -47,12 +47,10 @@ export class AuthPageComponent implements OnInit {
     this.isLoadingLoginError = false;
     this.authService.login(requestCredential).subscribe(
       (data) => {
-        console.log(data);
         this.isLoadingLogin = false;
         this.goToDashboard();
       },
       ({error}: HttpErrorResponse) => {
-        console.log(error);
         this.isLoadingLogin = false;
         this.isLoadingLoginError = true;
         this.messageLoginError = error.error;

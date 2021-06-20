@@ -1,12 +1,16 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 
-import {UserPageComponent} from './containers';
+import {UserPageComponent, UserFormComponent} from './containers';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'list',
     component: UserPageComponent
+  },
+  {
+    path: 'form',
+    component: UserFormComponent
   }
 ];
 

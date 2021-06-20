@@ -12,7 +12,8 @@
         <p class="not-found-page__card-sub-title">Oops. Looks like the page you're looking for no longer exists</p>
         <p class="not-found-page__card-sub-title-second">But we're here to bring you back to safety</p>
 
-        <button class="not-found-page__card-button" (click)="goHome()" mat-raised-button color="primary">Back to
+        <button [routerLink]="routes.DASHBOARD" class="not-found-page__card-button" mat-raised-button color="primary">
+          Back to
           Home
         </button>
 

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UserService} from "../../services/user.service";
+import {Observable} from "rxjs";
+import {User} from "../../models/user";
 
 @Component({
   selector: 'app-user-page',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPageComponent implements OnInit {
 
-  constructor() { }
+  // @ts-ignore
+  public users$: Observable<User[]>
+
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit(): void {
+    this.users$ = this.userService.getAll();
+  }
+
+  trackBy(index: number, item: User) {
+    return item.id;
   }
 
 }

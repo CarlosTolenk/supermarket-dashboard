@@ -6,6 +6,8 @@ import {Router} from '@angular/router';
 // import {AuthService, EmailService} from '../../../../pages/auth/services';
 import {RoutesApp} from '../../../../globals/consts';
 import {AuthService} from "../../../../pages/auth/services/auth.service";
+import {UserService} from "../../../../pages/user/services/user.service";
+import {User} from "../../../../pages/user/models/user";
 
 @Component({
   selector: 'app-header',
@@ -16,14 +18,15 @@ export class HeaderComponent {
 
   @Input() isMenuOpened: boolean = false;
   @Output() isShowSidebar = new EventEmitter<boolean>();
-  public user$: Observable<any>
+  public user$: Observable<User>
   public routers: typeof RoutesApp = RoutesApp;
 
   constructor(
-    private userService: AuthService,
+    private authService: AuthService,
+    private userService: UserService,
     private router: Router
   ) {
-    this.user$ = of([])
+    this.user$ = this.userService.getById();
   }
 
   public openMenu(): void {
@@ -33,7 +36,7 @@ export class HeaderComponent {
   }
 
   public signOut(): void {
-    this.userService.logout();
+    this.authService.logout();
     this.router.navigate([this.routers.LOGIN]).then();
   }
 }

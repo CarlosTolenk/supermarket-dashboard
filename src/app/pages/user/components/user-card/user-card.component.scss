@@ -1,0 +1,12 @@
+.user-card {
+  max-width: 350px;
+
+  .actions-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.user-header-image {
+  background-size: cover;
+}

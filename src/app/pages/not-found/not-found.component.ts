@@ -15,9 +15,4 @@ export class NotFoundComponent {
   constructor() {
   }
 
-  goHome(): void {
-    console.log('goHome');
-  }
-
-
 }

@@ -18,7 +18,7 @@ import {HeaderComponent} from './containers';
 
 // Components
 import {
-  UserComponent, NotificationsComponent, SearchComponent
+  UserComponent, SearchComponent
 } from './components';
 
 
@@ -26,7 +26,6 @@ import {
   declarations: [
     HeaderComponent,
     UserComponent,
-    NotificationsComponent,
     SearchComponent,
     ShortNamePipe
   ],

@@ -1,3 +1,5 @@
+import {IUser} from "../interfaces";
+
 export class User {
   id: number;
   email: string;
