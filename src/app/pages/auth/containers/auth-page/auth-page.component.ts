@@ -15,7 +15,7 @@ import {AuthService} from "../../services/auth.service";
   templateUrl: './auth-page.component.html',
   styleUrls: ['./auth-page.component.scss']
 })
-export class AuthPageComponent {
+export class AuthPageComponent implements OnInit {
 
   public todayDate: Date = new Date();
   public routesApp: typeof RoutesApp = RoutesApp;
@@ -34,6 +34,12 @@ export class AuthPageComponent {
     private router: Router,
     private authService: AuthService,
   ) {
+  }
+
+  ngOnInit() {
+    if (this.authService.isUserLogged()) {
+      this.goToDashboard();
+    }
   }
 
   public sendLoginForm(requestCredential: IRequestCredential): void {

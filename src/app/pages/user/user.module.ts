@@ -1,6 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
+// Angular Material
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+// Modules
+import {SharedModule} from "../../shared/shared.module";
+
 // Routes
 import {UserRoutingModule} from "./user-routing.module";
 
@@ -14,7 +20,9 @@ import {UserPageComponent} from './containers';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    MatToolbarModule,
+    SharedModule
   ]
 })
 export class UserModule {

@@ -16,8 +16,8 @@ import {AuthRoutingModule} from "./auth-routing.module";
 // Pipes
 import {YearPipe} from './pipes';
 
-// Guards
-import {AuthGuard} from "./guards/auth.guard";
+// Services
+import {AuthService} from "./services/auth.service";
 
 // Components
 import {LoginFormComponent, SignFormComponent} from './components';
@@ -41,7 +41,8 @@ import {AuthPageComponent} from './containers';
     ReactiveFormsModule,
     FormsModule,
     SharedModule
-  ]
+  ],
+  providers: [AuthService]
 })
 export class AuthModule {
 }

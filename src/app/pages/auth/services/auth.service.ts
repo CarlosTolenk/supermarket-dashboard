@@ -46,6 +46,11 @@ export class AuthService extends BaseService {
       );
   }
 
+  isUserLogged(): boolean {
+    const token = localStorage.getItem(TOKEN_USER);
+    return !!token;
+  }
+
   logout(): void {
     localStorage.removeItem(TOKEN_USER);
   }
