@@ -5,8 +5,12 @@
 
 
   <div class="container-list">
-    <ng-container *ngFor="let user of users$ | async; trackBy: trackBy">
-      <app-user-card [user]="user"></app-user-card>
+    <ng-container *ngFor="let user of users; trackBy: trackBy">
+      <app-user-card
+        [user]="user"
+        (updateUser)="onUpdateUser($event)"
+        (deleteUser)="onDeleteUser($event)"
+      ></app-user-card>
     </ng-container>
   </div>
 

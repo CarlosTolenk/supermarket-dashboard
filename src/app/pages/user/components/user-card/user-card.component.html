@@ -9,8 +9,8 @@
 
   <mat-card-actions>
     <div class="actions-button">
-      <button mat-raised-button color="primary" mat-button>Update</button>
-      <button mat-raised-button color="warn" mat-button>Delete</button>
+      <button mat-raised-button (click)="onUpdateUser(user)" color="primary" mat-button>Update</button>
+      <button mat-raised-button (click)="onDeleteUser(user)" color="warn" mat-button>Delete</button>
     </div>
   </mat-card-actions>
 </mat-card>

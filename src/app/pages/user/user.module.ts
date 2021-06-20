@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // Modules
 import {SharedModule} from "../../shared/shared.module";
@@ -34,6 +35,7 @@ import {UserCardComponent} from './components';
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    MatSnackBarModule,
     SharedModule
   ],
   providers: [UserService]

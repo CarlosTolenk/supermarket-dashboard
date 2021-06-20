@@ -53,4 +53,13 @@ export class UserService extends BaseService {
         })
       )
   }
+
+  deleteById(id: number): Observable<boolean> {
+    return this.http.delete(`${this.baseUrl}/api/users/${id}`)
+      .pipe(
+        map((response) => {
+          return response === null;
+        })
+      )
+  }
 }

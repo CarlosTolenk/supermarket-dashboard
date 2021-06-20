@@ -1,7 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../services/user.service";
-import {Observable} from "rxjs";
+
+// Angular Material
+import {MatSnackBar} from "@angular/material/snack-bar";
+
+// Models
 import {User} from "../../models/user";
+
+// Services
+import {UserService} from "../../services/user.service";
+
 
 @Component({
   selector: 'app-user-page',
@@ -11,17 +18,50 @@ import {User} from "../../models/user";
 export class UserPageComponent implements OnInit {
 
   // @ts-ignore
-  public users$: Observable<User[]>
+  public users: User[];
 
-  constructor(private userService: UserService) {
+  constructor(
+    private _snackBar: MatSnackBar,
+    private userService: UserService
+  ) {
   }
 
   ngOnInit(): void {
-    this.users$ = this.userService.getAll();
+    this.userService.getAll().subscribe((users) => {
+      this.users = users;
+    })
   }
 
   trackBy(index: number, item: User) {
     return item.id;
+  }
+
+  onDeleteUser(id: number): void {
+    this.openSnackBar('Process Action....', 'Wait');
+    this.userService.deleteById(id).subscribe((isCorrectAction) => {
+      this.closeSnackBar();
+      if (isCorrectAction) {
+        this.users = this.users.filter((user) => user.id !== id);
+        this.openSnackBar('User Removed', 'Successfully');
+        setTimeout(() => {
+          this.closeSnackBar();
+        }, 2000)
+      }
+    });
+  }
+
+  onUpdateUser(user: User): void {
+    console.group('onDeleteUser');
+    console.log(user);
+    console.groupEnd();
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
+
+  closeSnackBar(): void {
+    this._snackBar.dismiss();
   }
 
 }
