@@ -1,0 +1,14 @@
+<div *ngIf="isLoading" class="progress-spinner">
+  <mat-progress-spinner
+    [diameter]="diameter"
+    [color]="'primary'"
+    [mode]="'indeterminate'">
+  </mat-progress-spinner>
+  <p class="progress-spinner__text-loading">Loading...</p>
+</div>
+
+<div *ngIf="isError" class="message-error">
+  <p class="message-error__text">{{messageError | titlecase }}</p>
+</div>
+
+

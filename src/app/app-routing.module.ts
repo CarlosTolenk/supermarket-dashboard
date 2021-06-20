@@ -1,11 +1,17 @@
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 
+import {RoutesApp} from './globals/consts';
+
 // Components
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
   {
     path: 'login',
     loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)

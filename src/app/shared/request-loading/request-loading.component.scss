@@ -1,0 +1,28 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/variables";
+@import "src/app/styles/font";
+
+.progress-spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+
+  &__text-loading {
+    margin-top: 1rem;
+  }
+}
+
+.message-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+  &__text {
+    text-align: center;
+    color: $dark-pink;
+  }
+}
