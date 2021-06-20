@@ -16,6 +16,9 @@ import {AuthRoutingModule} from "./auth-routing.module";
 // Pipes
 import {YearPipe} from './pipes';
 
+// Guards
+import {AuthGuard} from "./guards/auth.guard";
+
 // Components
 import {LoginFormComponent, SignFormComponent} from './components';
 

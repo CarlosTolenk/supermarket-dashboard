@@ -1,4 +1,5 @@
 export enum RoutesApp {
   DASHBOARD = '/dashboard',
-  LOGIN = '/login'
+  LOGIN = '/login',
+  USER = '/user'
 }

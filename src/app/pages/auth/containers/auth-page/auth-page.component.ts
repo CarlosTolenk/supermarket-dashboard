@@ -43,6 +43,7 @@ export class AuthPageComponent {
       (data) => {
         console.log(data);
         this.isLoadingLogin = false;
+        this.goToDashboard();
       },
       ({error}: HttpErrorResponse) => {
         console.log(error);
@@ -60,6 +61,7 @@ export class AuthPageComponent {
       (data) => {
         console.log(data);
         this.isLoadingSign = false;
+        this.goToDashboard();
       },
       ({error}: HttpErrorResponse) => {
         console.log(error);
