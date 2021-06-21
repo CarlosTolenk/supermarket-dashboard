@@ -2,6 +2,10 @@
 
 The project is developed for a supermarket to control customers by means of the basic actions of a CRUD API, in addition it has a control panel design, a registration section and login.
 
+## Demo URL
+
+https://example.ctolenk.com/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
