@@ -2,6 +2,31 @@
   <mat-toolbar class="page-header" role="heading">
     <h1>Form User</h1>
   </mat-toolbar>
+
+
+  <mat-card class="form-card">
+    <mat-card-header>
+      <mat-card-title>Form User</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="form-card__content">
+      <form class="form-card__content__form" [formGroup]="form" (ngSubmit)="onSubmitForm()">
+        <mat-form-field class="form__input">
+          <input matInput placeholder="Name User" type="text" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="form__input">
+          <input matInput placeholder="Job User" type="text" formControlName="job">
+        </mat-form-field>
+
+        <div class="form-card__content__form-action">
+          <button class="form-actions__login" mat-raised-button color="primary" type="submit">Send</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+
 </app-layout>
 
 

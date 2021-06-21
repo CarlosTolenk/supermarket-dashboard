@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-user-form',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
 
-  constructor() { }
+  public form: FormGroup;
+
+  constructor(
+    private _snackBar: MatSnackBar,
+    private userService: UserService
+  ) {
+    this.form = new FormGroup({
+      name: new FormControl('', [Validators.required]),
+      job: new FormControl('', [Validators.required])
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmitForm(): void {
+    if (this.form.valid) {
+      const {name, job} = this.form.value;
+      this.userService.create({name, job})
+    }
   }
 
 }

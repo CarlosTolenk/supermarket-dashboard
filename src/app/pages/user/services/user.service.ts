@@ -7,7 +7,13 @@ import {map} from "rxjs/operators";
 import {BaseService} from "../../../globals/base";
 
 // Interfaces
-import {IResponseUserSingle, IResponseUserList} from "../interfaces";
+import {
+  IResponseUserSingle,
+  IResponseUserList,
+  IRequestCreateUser,
+  IResponseCreateUser,
+  IRequestUpdateUser
+} from "../interfaces";
 
 // Models
 import {User} from "../models/user";
@@ -52,6 +58,14 @@ export class UserService extends BaseService {
           });
         })
       )
+  }
+
+  create(requestCreateUser: IRequestCreateUser): Observable<IResponseCreateUser> {
+    return this.http.post<IResponseCreateUser>(`${this.baseUrl}/api/users`, requestCreateUser);
+  }
+
+  update(requestUpdateUser: IRequestUpdateUser) {
+    return this.http.post<IResponseCreateUser>(`${this.baseUrl}/api/users/${requestUpdateUser.id}`, requestUpdateUser);
   }
 
   deleteById(id: number): Observable<boolean> {
