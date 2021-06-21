@@ -1,27 +1,28 @@
 # SupermarketDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+The project is developed for a supermarket to control customers by means of the basic actions of a CRUD API, in addition it has a control panel design, a registration section and login.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Using this template you will be able to leverage lots of built-in components and thus focus on building features that set you apart from competitors rather than bulding everything from scratch. Lite version of Angular Material Admin includes following features and pages:
+* Angular Material & SCSS
+* Responsive layout
+* Styled Angular Material components like buttons, cards, etc
+* Dashboard sample
+* User like lists and form
+* Hover sidebar
+* Login
+* 404
 
-## Running end-to-end tests
+## Project structure
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+It was based on a modular architecture capable of growing easily due to its robustness
