@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RoutesApp} from "../../globals/consts";
+import {RoutesApp} from "../../../globals/consts";
 
 @Component({
   selector: 'app-sidebar',

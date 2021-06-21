@@ -4,10 +4,10 @@ import {Router} from '@angular/router';
 
 // import {Email, User} from '../../../../pages/auth/models';
 // import {AuthService, EmailService} from '../../../../pages/auth/services';
-import {RoutesApp} from '../../../../globals/consts';
-import {AuthService} from "../../../../pages/auth/services/auth.service";
-import {UserService} from "../../../../pages/user/services/user.service";
-import {User} from "../../../../pages/user/models/user";
+import {RoutesApp} from '../../../../../globals/consts';
+import {AuthService} from "../../../../../pages/auth/services/auth.service";
+import {UserService} from "../../../../../pages/user/services/user.service";
+import {User} from "../../../../../pages/user/models/user";
 
 @Component({
   selector: 'app-header',

@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 
-import {RoutesApp} from '../../../../globals/consts';
+import {RoutesApp} from '../../../../../globals/consts';
 
 // Models
-import {User} from "../../../../pages/user/models/user";
+import {User} from "../../../../../pages/user/models/user";
 
 @Component({
   selector: 'app-user',

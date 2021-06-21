@@ -1,23 +1,59 @@
-.form-card {
-  display: flex;
-  flex-direction: column;
-  width: 35%;
+@import "src/app/styles/colors";
+@import "src/app/styles/font";
 
-  &__content {
+.content-form-layout {
+  display: flex;
+
+  .form-card {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 35%;
 
-    &__form {
+    &__content {
       display: flex;
       flex-direction: column;
       width: 100%;
+
+      &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      &__form-action {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
     }
 
-    &__form-action {
+
+  }
+
+  .user-card {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        color: $blue;
+        margin-left: 1rem;
+      }
+
+      &__text {
+        color: $dark-grey;
+      }
+    }
+
+    &__actions-button {
       display: flex;
       justify-content: center;
-      width: 100%;
     }
   }
 }
+
+

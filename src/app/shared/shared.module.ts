@@ -4,21 +4,25 @@ import {RouterModule} from "@angular/router";
 
 // Angular Material
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-import {MatSidenavModule} from '@angular/material/sidenav'
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // Modules
-import {HeaderModule} from "./header/header.module";
+import {HeaderModule} from "./components/header/header.module";
+
+// Services
+import {SnackBarService} from "./services/snack-bar.service";
 
 // Containers
-import {HeaderComponent} from './header/containers';
+import {HeaderComponent} from './components/header/containers';
 
 // Components
-import {RequestLoadingComponent} from './request-loading/request-loading.component';
-import {FooterComponent} from './footer/footer.component';
-import {SidebarComponent} from './sidebar/sidebar.component';
-import {LayoutComponent} from './layout/layout.component';
+import {RequestLoadingComponent} from './components/request-loading/request-loading.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+import {LayoutComponent} from './components/layout/layout.component';
 
 
 @NgModule({
@@ -40,10 +44,12 @@ import {LayoutComponent} from './layout/layout.component';
     RouterModule,
     HeaderModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
     MatIconModule,
     MatListModule,
     MatSidenavModule
-  ]
+  ],
+  providers: [SnackBarService]
 })
 export class SharedModule {
 }

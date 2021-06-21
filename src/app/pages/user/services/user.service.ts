@@ -12,7 +12,7 @@ import {
   IResponseUserList,
   IRequestCreateUser,
   IResponseCreateUser,
-  IRequestUpdateUser
+  IRequestUpdateUser, IResponseUpdateUser
 } from "../interfaces";
 
 // Models
@@ -65,7 +65,7 @@ export class UserService extends BaseService {
   }
 
   update(requestUpdateUser: IRequestUpdateUser) {
-    return this.http.post<IResponseCreateUser>(`${this.baseUrl}/api/users/${requestUpdateUser.id}`, requestUpdateUser);
+    return this.http.put<IResponseUpdateUser>(`${this.baseUrl}/api/users/${requestUpdateUser.id}`, requestUpdateUser);
   }
 
   deleteById(id: number): Observable<boolean> {
